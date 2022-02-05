@@ -3,6 +3,7 @@
 <a href={{route('recetas.create')}} class="btn btn-primary mr-2 text-white">Crear Recetas</a>
 @endsection
 @section('content')
+
 <h2 class="text-center mb-5">Administra tus Recetas</h2>
 <div class="col-md-10 mx-auto bg-white p-3">
     <table class="table">
@@ -14,11 +15,17 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($userRecetas as $userReceta)
             <tr>
-                <th scope="col">Pizza de camarones:</th>
-                <th scope="col"> Encevollados:</th>
-                <th scope="col">Ceviches</th>
+                <td>{{$userReceta->nombre}}</td>
+                <td> {{$userReceta->categoria_id}}</td>
+                <td>
+                    <a href="" class="btn btn-success">Ver</a>
+                    <a href="" class="btn btn-dark">Editar</a>
+                    <a href="" class="btn btn-danger">Eliminar</a>
+                </td>
             </tr>
+            @endforeach
         </tbody>
 
     </table>
